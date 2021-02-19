@@ -88,7 +88,7 @@ class Deploy {
             $this->revisionFile = $this->isSubmodule . '/' . $this->revisionFile;
         }
 
-        if ($this->bridge->exists($this->revisionFile)) {
+        if ($this->bridge->revisionFileExists($this->revisionFile)) {
             $remoteRevision = $this->bridge->get($this->revisionFile);
 
             $message = "\r\n» Taking it from '" . substr($remoteRevision, 0, 7) . "'";

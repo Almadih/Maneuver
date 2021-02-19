@@ -82,7 +82,6 @@ class Git {
         }
 
         $command = 'git --git-dir="'.$repoPath.'/.git" --work-tree="'.$repoPath.'" '.$command;
-
         exec(escapeshellcmd($command), $output, $returnStatus);
 
         if ($returnStatus != 0) {
@@ -153,7 +152,7 @@ class Git {
             return $this->command('ls-files');
         }
         
-        return $this->command("diff");
+        return $this->command("diff --name-status --no-renames {$revision}...{$this->revision}");
     }
 
     /**
