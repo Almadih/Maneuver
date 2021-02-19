@@ -1,5 +1,5 @@
 {
-    "name": "fadion/maneuver-local",
+    "name": "almadih/maneuver-v2",
     "description": "Easily deploy Laravel projects via FTP or SFTP, using Git for versioning.",
     "license": "MIT",
     "keywords": ["laravel", "deployment", "git", "ftp", "ssh"],
