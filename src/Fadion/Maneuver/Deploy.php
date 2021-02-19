@@ -79,7 +79,6 @@ class Deploy {
      */
     public function compare()
     {
-        print"compare";
         $remoteRevision = null;
         $filesToUpload = array();
         $filesToDelete = array();

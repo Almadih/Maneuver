@@ -118,8 +118,7 @@ class Maneuver {
 
             $deploy = new Deploy($git, $bridge, $credentials);
 
-            print "before";
-            print "\r\n+ --------------- § ---------------! +";
+            print "\r\n+ --------------- § --------------- +";
             print "\n» Server: $name";
 
             // Sync mode. Write revision and close the
@@ -186,10 +185,8 @@ class Maneuver {
      */
     public function push($deploy)
     {
-        print "compare";
         // Compare local revision to the remote one, to
         // build files to upload and delete.
-        print "here";
         $message = $deploy->compare();
         print $message;
         print "\n+ --------------- + --------------- +";
