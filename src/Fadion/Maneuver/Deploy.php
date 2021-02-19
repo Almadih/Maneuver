@@ -79,10 +79,11 @@ class Deploy {
      */
     public function compare()
     {
+        print"compare";
         $remoteRevision = null;
         $filesToUpload = array();
         $filesToDelete = array();
-
+        
         // The revision file goes inside the submodule.
         if ($this->isSubmodule) {
             $this->revisionFile = $this->isSubmodule . '/' . $this->revisionFile;

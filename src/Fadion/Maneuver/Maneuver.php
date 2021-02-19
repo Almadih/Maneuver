@@ -118,7 +118,8 @@ class Maneuver {
 
             $deploy = new Deploy($git, $bridge, $credentials);
 
-            print "\r\n+ --------------- § --------------- +";
+            print "before";
+            print "\r\n+ --------------- § ---------------! +";
             print "\n» Server: $name";
 
             // Sync mode. Write revision and close the
@@ -138,7 +139,6 @@ class Maneuver {
                 print "\n« Rolling back ";
                 $git->rollback();
             }
-
             $dirtyRepo = $this->push($deploy);
             $dirtySubmodules = false;
 
@@ -186,14 +186,15 @@ class Maneuver {
      */
     public function push($deploy)
     {
+        print "compare";
         // Compare local revision to the remote one, to
         // build files to upload and delete.
+        print "here";
         $message = $deploy->compare();
         print $message;
         print "\n+ --------------- + --------------- +";
 
         $dirty = false;
-
         $filesToUpload = $deploy->getFilesToUpload();
         $filesToDelete = $deploy->getFilesToDelete();
 
